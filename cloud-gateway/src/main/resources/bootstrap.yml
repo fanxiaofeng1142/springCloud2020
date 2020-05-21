@@ -1,0 +1,28 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 注册中心
+      config:
+        server-addr: localhost:8848 # 配置中心
+        file-extension: yaml # 这里指定的文件格式需要和nacos上新建的配置文件后缀相同，否则读不到
+        group: TEST_GROUP #分组
+        #namespace: public
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          #lowerCaseServiceId: true #开启小写验证，默认feign根据服务名查找都是用的全大写
+      routes:
+        - id: client-test  #路由名称,自定义
+          uri: lb://cloud-nacos-consumer  #路由到改服务
+          predicates:
+            - Path=/testclient/**   #匹配该路径，进行路由
+          filters:
+            - AddRequestHeader=X-Request-Foo, Bar  #给请求头添加参数的过滤器
+            - StripPrefix=1  #去掉访问路径的一个节点 例如 =/testclient/aa/bb 路由后 /aa/bb StripPrefix=2 则为/bb
+

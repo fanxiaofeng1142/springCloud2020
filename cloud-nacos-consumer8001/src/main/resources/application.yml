@@ -1,0 +1,9 @@
+spring:
+  profiles:
+#    active: dev # 开发环境
+#    active: test # 测试环境
+#    active: info # 开发环境
+
+#消费者将要去访问的微服务名称（注册成功进nacos的微服务提供者）
+service-url:
+  nacos-user-service: http://cloud-nacos-provider

@@ -1,0 +1,21 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: cloud-nacos-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 注册中心
+      config:
+        server-addr: localhost:8848 # 配置中心
+        file-extension: yaml  # 这里指定的文件格式需要和nacos上新建的配置文件后缀相同，否则读不到
+        group: TEST_GROUP  #分组
+        namespace: 176592d5-a0f5-40da-8f0c-818b57197f7b
+
+#ctuator 服务监控与管理 /actuator/info
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,6 @@
+# Project exclude paths
+/cloud-api-commons/target/
+/cloud-gateway/target/
+/cloud-nacos-config/target/
+/cloud-nacos-consumer8001/target/
+/cloud-nacos-provider9001/target/
