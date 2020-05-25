@@ -25,4 +25,11 @@ spring:
           filters:
             - AddRequestHeader=X-Request-Foo, Bar  #给请求头添加参数的过滤器
             - StripPrefix=1  #去掉访问路径的一个节点 例如 =/testclient/aa/bb 路由后 /aa/bb StripPrefix=2 则为/bb
+        - id: client-test2
+          uri: lb://cloud-nacos-consumer
+          predicates:
+            - Path=/testclient2/**
+          filters:
+            - myfirst=true  #添加自定义过滤器工厂myfirstGatewayFilterFactory
+            - StripPrefix=1
 
