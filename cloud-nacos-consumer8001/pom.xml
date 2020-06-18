@@ -26,7 +26,7 @@
       <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.yangluyao.springcloud</groupId>
+      <groupId>com.fxf.springCloud</groupId>
       <artifactId>cloud-api-commons</artifactId>
       <version>${project.version}</version>
     </dependency>
