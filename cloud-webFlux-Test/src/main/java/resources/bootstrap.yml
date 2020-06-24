@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: cloud-webFlux-Test
+
+#ctuator 服务监控与管理 /actuator/info
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

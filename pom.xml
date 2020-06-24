@@ -14,6 +14,7 @@
     <module>cloud-nacos-provider9001</module>
     <module>cloud-nacos-consumer8001</module>
     <module>cloud-gateway</module>
+    <module>cloud-webFlux-Test</module>
 
   </modules>
 
